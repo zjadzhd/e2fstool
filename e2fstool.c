@@ -452,8 +452,8 @@ errcode_t walk_fs(ext2_filsys fs)
         else
             cfg_pfx = "";
 
-        if (asprintf(&params.fs_path, "%s/%s_fs_config", conf_dir, cfg_pfx) < 0 ||
-            asprintf(&params.se_path, "%s/%s_file_contexts", conf_dir, cfg_pfx) < 0) {
+        if (asprintf(&params.fs_path, "%s/%sfs_config", conf_dir, cfg_pfx) < 0 ||
+            asprintf(&params.se_path, "%s/%sfile_contexts", conf_dir, cfg_pfx) < 0) {
             com_err(__func__, EXT2_ET_NO_MEMORY, "while configuring config paths");
             return 1;
         }
